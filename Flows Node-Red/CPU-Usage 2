@@ -1,0 +1,134 @@
+[
+    {
+        "id": "62969350.a923a4",
+        "type": "tab",
+        "label": "Cpu Usage 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f556e346.48b128",
+        "type": "inject",
+        "z": "62969350.a923a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "3fcb8517.54a2d2"
+            ]
+        ]
+    },
+    {
+        "id": "3fcb8517.54a2d2",
+        "type": "cpu",
+        "z": "62969350.a923a4",
+        "name": "Core Usage",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "50d7eb8fe2ea5826",
+                "5bdc34d82e700b9e"
+            ]
+        ]
+    },
+    {
+        "id": "50d7eb8fe2ea5826",
+        "type": "debug",
+        "z": "62969350.a923a4",
+        "name": "StructData",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5bdc34d82e700b9e",
+        "type": "function",
+        "z": "62969350.a923a4",
+        "name": "",
+        "func": "msg.payload = { \n    \"ID\":\"Saul Herrera\", \n    \"Core\": msg.payload \n    \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "ba458a22101fdc36"
+            ]
+        ]
+    },
+    {
+        "id": "ba458a22101fdc36",
+        "type": "mqtt out",
+        "z": "62969350.a923a4",
+        "name": "",
+        "topic": "codigoIoT/SIC/flowRG/core",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8a9a08dccd4b964f",
+        "x": 870,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "8a9a08dccd4b964f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "3.66.119.222",
+        "port": "1883",
+        "clientid": "saul12hs_1",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    }
+]

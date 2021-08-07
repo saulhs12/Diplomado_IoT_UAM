@@ -1,0 +1,366 @@
+[
+    {
+        "id": "0216e2359a8cdc5d",
+        "type": "tab",
+        "label": "Cpu Usage",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "8efdb4de6254e963",
+        "type": "inject",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "e5a8807a09d84e57",
+                "b1b6f770bd7bd6c6"
+            ]
+        ]
+    },
+    {
+        "id": "7d0b6ab097f36842",
+        "type": "debug",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9843462773e7bf2a",
+        "type": "debug",
+        "z": "0216e2359a8cdc5d",
+        "name": "structData",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "567af0baa90488ef",
+        "type": "function",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "func": "msg.payload = {\n    corespd1:msg.payload[0].speed,\n    corespd2:msg.payload[1].speed,\n    corespd3:msg.payload[2].speed,\n    corespd4:msg.payload[3].speed\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 80,
+        "wires": [
+            [
+                "44145e37d360ca40",
+                "1df5ec6494da07cc",
+                "94f82d408b3ecb97",
+                "67f4903ab02b7e7e"
+            ]
+        ]
+    },
+    {
+        "id": "b21dc82f0ad21081",
+        "type": "inject",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "670668a0975936d5"
+            ]
+        ]
+    },
+    {
+        "id": "e5a8807a09d84e57",
+        "type": "cpu",
+        "z": "0216e2359a8cdc5d",
+        "name": "Core Usage",
+        "msgCore": false,
+        "msgOverall": false,
+        "msgArray": true,
+        "msgTemp": false,
+        "x": 340,
+        "y": 60,
+        "wires": [
+            [
+                "567af0baa90488ef"
+            ]
+        ]
+    },
+    {
+        "id": "b1b6f770bd7bd6c6",
+        "type": "cpu",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU Temperature",
+        "msgCore": false,
+        "msgOverall": false,
+        "msgArray": false,
+        "msgTemp": true,
+        "x": 330,
+        "y": 140,
+        "wires": [
+            [
+                "7d0b6ab097f36842",
+                "11510a0d7d890b44"
+            ]
+        ]
+    },
+    {
+        "id": "670668a0975936d5",
+        "type": "cpu",
+        "z": "0216e2359a8cdc5d",
+        "name": "Core Usage",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "9843462773e7bf2a",
+                "d3baec03719a2792"
+            ]
+        ]
+    },
+    {
+        "id": "11510a0d7d890b44",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU Temperature",
+        "group": "dd70abe0.14cb38",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Teperature ºC",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 630,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "44145e37d360ca40",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 1",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 1 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 730,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1df5ec6494da07cc",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 2",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 1 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 730,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "94f82d408b3ecb97",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 3",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 3 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 710,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "67f4903ab02b7e7e",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 4",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 4 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d3baec03719a2792",
+        "type": "ui_chart",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "group": "dd70abe0.14cb38",
+        "order": 5,
+        "width": "6",
+        "height": "6",
+        "label": "Uso en el core",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 540,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dd70abe0.14cb38",
+        "type": "ui_group",
+        "name": "OS",
+        "tab": "6d54a11.6b2c0e",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6d54a11.6b2c0e",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

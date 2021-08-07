@@ -1,0 +1,766 @@
+[
+    {
+        "id": "62969350.a923a4",
+        "type": "tab",
+        "label": "Cpu Usage 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "cdee3924ef1eefaa",
+        "type": "tab",
+        "label": "Main",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "0216e2359a8cdc5d",
+        "type": "tab",
+        "label": "Cpu Usage",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "6d54a11.6b2c0e",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dd70abe0.14cb38",
+        "type": "ui_group",
+        "name": "OS",
+        "tab": "6d54a11.6b2c0e",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "e57d840381956b36",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "8a9a08dccd4b964f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "3.66.119.222",
+        "port": "1883",
+        "clientid": "saul12hs_1",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "47dc0b9e455864fa",
+        "type": "ui_tab",
+        "name": "CoreUsage",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8860196b699ff63a",
+        "type": "ui_group",
+        "name": "Identificador",
+        "tab": "47dc0b9e455864fa",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ea7e8064fd5bb47c",
+        "type": "ui_group",
+        "name": "USO",
+        "tab": "47dc0b9e455864fa",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f556e346.48b128",
+        "type": "inject",
+        "z": "62969350.a923a4",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "20",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "3fcb8517.54a2d2"
+            ]
+        ]
+    },
+    {
+        "id": "3fcb8517.54a2d2",
+        "type": "cpu",
+        "z": "62969350.a923a4",
+        "name": "Core Usage",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "50d7eb8fe2ea5826",
+                "5bdc34d82e700b9e"
+            ]
+        ]
+    },
+    {
+        "id": "8efdb4de6254e963",
+        "type": "inject",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "e5a8807a09d84e57",
+                "b1b6f770bd7bd6c6"
+            ]
+        ]
+    },
+    {
+        "id": "7d0b6ab097f36842",
+        "type": "debug",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9843462773e7bf2a",
+        "type": "debug",
+        "z": "0216e2359a8cdc5d",
+        "name": "structData",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "567af0baa90488ef",
+        "type": "function",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "func": "msg.payload = {\n    corespd1:msg.payload[0].speed,\n    corespd2:msg.payload[1].speed,\n    corespd3:msg.payload[2].speed,\n    corespd4:msg.payload[3].speed\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 500,
+        "y": 80,
+        "wires": [
+            [
+                "44145e37d360ca40",
+                "1df5ec6494da07cc",
+                "94f82d408b3ecb97",
+                "67f4903ab02b7e7e"
+            ]
+        ]
+    },
+    {
+        "id": "b21dc82f0ad21081",
+        "type": "inject",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "670668a0975936d5"
+            ]
+        ]
+    },
+    {
+        "id": "e5a8807a09d84e57",
+        "type": "cpu",
+        "z": "0216e2359a8cdc5d",
+        "name": "Core Usage",
+        "msgCore": false,
+        "msgOverall": false,
+        "msgArray": true,
+        "msgTemp": false,
+        "x": 340,
+        "y": 60,
+        "wires": [
+            [
+                "567af0baa90488ef"
+            ]
+        ]
+    },
+    {
+        "id": "b1b6f770bd7bd6c6",
+        "type": "cpu",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU Temperature",
+        "msgCore": false,
+        "msgOverall": false,
+        "msgArray": false,
+        "msgTemp": true,
+        "x": 330,
+        "y": 140,
+        "wires": [
+            [
+                "7d0b6ab097f36842",
+                "11510a0d7d890b44"
+            ]
+        ]
+    },
+    {
+        "id": "670668a0975936d5",
+        "type": "cpu",
+        "z": "0216e2359a8cdc5d",
+        "name": "Core Usage",
+        "msgCore": false,
+        "msgOverall": true,
+        "msgArray": false,
+        "msgTemp": false,
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "9843462773e7bf2a",
+                "d3baec03719a2792"
+            ]
+        ]
+    },
+    {
+        "id": "11510a0d7d890b44",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU Temperature",
+        "group": "dd70abe0.14cb38",
+        "order": 0,
+        "width": "6",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Teperature ºC",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "70",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 630,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "44145e37d360ca40",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 1",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 1 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 730,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1df5ec6494da07cc",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 2",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 1 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 730,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "94f82d408b3ecb97",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 3",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 3 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 710,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "67f4903ab02b7e7e",
+        "type": "ui_gauge",
+        "z": "0216e2359a8cdc5d",
+        "name": "CPU MHz 4",
+        "group": "dd70abe0.14cb38",
+        "order": 1,
+        "width": "3",
+        "height": "3",
+        "gtype": "gage",
+        "title": "Core 4 Usage Mhz",
+        "label": "units",
+        "format": "{{msg.payload.corespd1}}",
+        "min": 0,
+        "max": "3500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 690,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d3baec03719a2792",
+        "type": "ui_chart",
+        "z": "0216e2359a8cdc5d",
+        "name": "",
+        "group": "dd70abe0.14cb38",
+        "order": 5,
+        "width": "6",
+        "height": "6",
+        "label": "Uso en el core",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 540,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da83df2433deb893",
+        "type": "json",
+        "z": "cdee3924ef1eefaa",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": true,
+        "x": 510,
+        "y": 160,
+        "wires": [
+            [
+                "c6aac8635f2fc551",
+                "b190a771a4d80c91"
+            ]
+        ]
+    },
+    {
+        "id": "fbb6af134a5bd29f",
+        "type": "mqtt in",
+        "z": "cdee3924ef1eefaa",
+        "name": "",
+        "topic": "codigoIoT/SIC/flowRG/core",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "8a9a08dccd4b964f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "da83df2433deb893"
+            ]
+        ]
+    },
+    {
+        "id": "5ef3d3bd67c3da2d",
+        "type": "ui_text",
+        "z": "cdee3924ef1eefaa",
+        "group": "8860196b699ff63a",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "ID",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 870,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "50d7eb8fe2ea5826",
+        "type": "debug",
+        "z": "62969350.a923a4",
+        "name": "StructData",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "de9b5d0d2a120c27",
+        "type": "ui_chart",
+        "z": "cdee3924ef1eefaa",
+        "name": "",
+        "group": "ea7e8064fd5bb47c",
+        "order": 7,
+        "width": "0",
+        "height": "0",
+        "label": "Core vs Tiempo",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "40",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 900,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bdc34d82e700b9e",
+        "type": "function",
+        "z": "62969350.a923a4",
+        "name": "",
+        "func": "msg.payload = { \n    \"ID\":\"Saul Herrera\", \n    \"Core\": msg.payload \n    \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 260,
+        "wires": [
+            [
+                "ba458a22101fdc36"
+            ]
+        ]
+    },
+    {
+        "id": "ba458a22101fdc36",
+        "type": "mqtt out",
+        "z": "62969350.a923a4",
+        "name": "",
+        "topic": "codigoIoT/SIC/flowRG/core",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8a9a08dccd4b964f",
+        "x": 870,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c6aac8635f2fc551",
+        "type": "function",
+        "z": "cdee3924ef1eefaa",
+        "name": "",
+        "func": "\nmsg.payload = msg.payload.ID; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 120,
+        "wires": [
+            [
+                "5ef3d3bd67c3da2d"
+            ]
+        ]
+    },
+    {
+        "id": "b190a771a4d80c91",
+        "type": "function",
+        "z": "cdee3924ef1eefaa",
+        "name": "",
+        "func": "msg.topic = msg.payload.ID;\nmsg.payload = msg.payload.Core; \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "de9b5d0d2a120c27"
+            ]
+        ]
+    }
+]
